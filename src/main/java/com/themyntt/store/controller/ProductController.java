@@ -17,6 +17,6 @@ public class ProductController {
 
     @GetMapping("/get/")
     public List<ProductEntity> getProducts() {
-        return productRepo.findAll();
+        return productRepo.getAllProducts();
     }
 }
