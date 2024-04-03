@@ -24,6 +24,8 @@ public class ProductEntity {
     @Column(name = "VALUE_PRODUCT")
     public double value;
 
+    public ProductEntity() { }
+
     public ProductEntity(String id, String email, String desc, String company, double value) {
         this.id = id;
         this.name = email;
