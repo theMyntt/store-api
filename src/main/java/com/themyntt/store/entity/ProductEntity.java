@@ -18,7 +18,7 @@ public class ProductEntity {
     @Column(name = "DESC_PRODUCT")
     public String desc;
 
-    @Column(name = "COMPANY_ID_COMPANY")
+    @Column(name = "COMPANY_NAME_COMPANY")
     public String company;
 
     @Column(name = "VALUE_PRODUCT")
