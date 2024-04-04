@@ -14,6 +14,9 @@ public interface ProductRepo extends JpaRepository<ProductEntity, String> {
     @Query("SELECT p FROM ProductEntity p")
     List<ProductEntity> getAllProducts();
 
+    @Query("SELECT p FROM ProductEntity p WHERE name = :name AND company = :company")
+    ProductEntity getProduct(String name, String company);
+
     @Modifying
     @Transactional
     @Query("INSERT INTO ProductEntity(id, name, desc, company, value) VALUES (:id, :name, :desc, :company, :value)")
