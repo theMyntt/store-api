@@ -23,4 +23,21 @@ public class UserController {
 
         return this.userRepo.getUser(email, password);
     }
+
+    @PostMapping("/set/")
+    String setUser(@RequestBody UserEntity userInfo) {
+        String id = utils.createId();
+        String name = userInfo.name;
+        String cellphone = userInfo.cellphone;
+        String email = userInfo.email;
+        String password = userInfo.password;
+        String company = userInfo.company;
+
+        try {
+            this.userRepo.setUser(id,name,cellphone,email,password,company);
+            return "OK";
+        } catch (Exception e) {
+            return "Erro ao criar o usuário: " + e;
+        }
+    }
 }
