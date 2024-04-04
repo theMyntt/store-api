@@ -17,5 +17,5 @@ public interface ProductRepo extends JpaRepository<ProductEntity, String> {
     @Modifying
     @Transactional
     @Query("INSERT INTO ProductEntity(id, name, desc, company, value) VALUES (:id, :name, :desc, :company, :value)")
-    ProductEntity setProduct(String id, String name, String desc, String company, double value);
+    void setProduct(String id, String name, String desc, String company, double value);
 }
