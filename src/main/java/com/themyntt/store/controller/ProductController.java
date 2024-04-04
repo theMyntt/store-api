@@ -21,6 +21,14 @@ public class ProductController {
         return productRepo.getAllProducts();
     }
 
+    @PostMapping("/get/")
+    public ProductEntity getOneProduct(@RequestBody ProductEntity productInfo) {
+        String name = productInfo.name;
+        String company = productInfo.company;
+
+        return this.productRepo.getProduct(name,company);
+    }
+
     @PostMapping("/set/")
     public String setProduct(@RequestBody ProductEntity productInfo) {
         String id = utils.createId();
